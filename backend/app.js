@@ -11,6 +11,10 @@ const classesRoutes = require('./routes/classRoutes');
 const studentsRoutes = require('./routes/studentRoutes');
 const teacherRoutes = require('./routes/teacherRoutes');
 const projectRoutes = require('./routes/projectRoutes');
+const defenseSessionRoutes = require('./routes/defenseSessionRoutes');
+const topicRoutes = require('./routes/topicRoutes');
+const councilRoutes = require('./routes/councilRoutes');
+
 
 app.use(express.json());
 
@@ -45,6 +49,14 @@ app.use('/teachers', teacherRoutes);
 
 app.use('/projects', projectRoutes);
 
-// Cấu hình và tuyến đường khác của ứng dụng
+// Tuyến đường cho đợt bảo vệ
+app.use('/defense_sessions', defenseSessionRoutes);
+
+// Tuyến đường cho đề tài
+app.use('/topics', topicRoutes); 
+
+
+// Sử dụng tuyến đường cho hội đồng
+app.use('/councils', councilRoutes);
 
 module.exports = app;

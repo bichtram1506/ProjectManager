@@ -1,7 +1,7 @@
+import { faBox, faChartBar, faClipboardList, faSignOutAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartBar, faBox, faClipboardList, faUsers, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 const AdminHeader = ({ onLogout }) => {
   const [activeNavItem, setActiveNavItem] = useState('');
@@ -68,6 +68,17 @@ const AdminHeader = ({ onLogout }) => {
               <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý Niên khóa
             </Link>
           </li>
+
+          <li className={`admin-header__nav-item ${activeNavItem === 'classes' ? 'active' : ''}`}>
+            <Link
+              to="/classes"
+              className="admin-header__nav-link"
+              onClick={() => handleNavItemClick('classes')}
+            >
+              <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý lớp
+            </Link>
+          </li>
+
           <li className={`admin-header__nav-item ${activeNavItem === 'students' ? 'active' : ''}`}>
             <Link
               to="/students"
@@ -77,6 +88,7 @@ const AdminHeader = ({ onLogout }) => {
               <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý sinh viên
             </Link>
           </li>
+
           <li className={`admin-header__nav-item ${activeNavItem === 'teachers' ? 'active' : ''}`}>
             <Link
               to="/teachers"
@@ -86,6 +98,7 @@ const AdminHeader = ({ onLogout }) => {
               <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý giảng viên
             </Link>
           </li>
+
           <li className={`admin-header__nav-item ${activeNavItem === 'projects' ? 'active' : ''}`}>
             <Link
               to="/projects"
@@ -95,6 +108,7 @@ const AdminHeader = ({ onLogout }) => {
               <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý Đồ án
             </Link>
           </li>
+          
           <li className={`admin-header__nav-item ${activeNavItem === 'students' ? 'active' : ''}`}>
             <Link
               to="/students"
@@ -104,6 +118,35 @@ const AdminHeader = ({ onLogout }) => {
               <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý sinh viên
             </Link>
           </li>
+          <li className={`admin-header__nav-item ${activeNavItem === 'topics' ? 'active' : ''}`}>
+            <Link
+              to="/topics"
+              className="admin-header__nav-link"
+              onClick={() => handleNavItemClick('topics')}
+            >
+              <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý đề tài
+            </Link>
+          </li>
+
+          <li className={`admin-header__nav-item ${activeNavItem === 'defense_sessions' ? 'active' : ''}`}>
+            <Link
+              to="/defense_sessions"
+              className="admin-header__nav-link"
+              onClick={() => handleNavItemClick('defense_sessions')}
+            >
+              <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý đợt bảo vệ
+            </Link>
+          </li>
+          <li className={`admin-header__nav-item ${activeNavItem === 'councils' ? 'active' : ''}`}>
+            <Link
+              to="/councils"
+              className="admin-header__nav-link"
+              onClick={() => handleNavItemClick('councils')}
+            >
+              <FontAwesomeIcon icon={faUsers} className="admin-header__nav-icon" /> Quản lý Hội đồng
+            </Link>
+          </li>
+
           <li className="admin-header__nav-item">
             <button onClick={onLogout} className="admin-header__logout-button">
               <FontAwesomeIcon icon={faSignOutAlt} className="admin-header__nav-icon" /> Đăng xuất
